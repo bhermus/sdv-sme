@@ -12,10 +12,10 @@ Dependencies:
     pip install requests
 
 Usage:
-    python fetch_sdv_wiki.py
+    python fetch_data.py
 
 Output:
-    sdv_wiki_raw.jsonl  (created in the same directory as the script)
+    sdv_wiki_raw.jsonl  (one JSON object per line, created in the same directory as the script)
 """
 
 import json
