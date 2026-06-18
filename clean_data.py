@@ -281,6 +281,7 @@ def extract_sections(wikitext):
     )  # list of Wikicode objects
 
     sections = []
+    excluded_sections = {"history", "gallery", "references", "external links"}
 
     for section in raw_sections:
         headings = section.filter_headings()
@@ -297,6 +298,10 @@ def extract_sections(wikitext):
 
         plain_text = section.strip_code()   # converts all remaining wikitext markup to plain text
         plain_text = clean_plain_text(plain_text)  # remove any artifacts that strip_code() leaves behind.
+
+        # skip section that contain irrelevant information
+        if header_text and header_text.lower() in excluded_sections:
+            continue
 
         # skip sections that are empty after cleaning
         if not plain_text:
