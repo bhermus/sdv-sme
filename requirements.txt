@@ -1,3 +1,7 @@
 requests>=2.34.2
 mwparserfromhell>=0.7.2
 tiktoken>=0.13.0
+tiktoken>=0.13.0
+psycopg2>=2.9.12
+openai>=2.43.0
+python-dotenv
